@@ -1,0 +1,26 @@
+package com.example.intent_activity
+
+import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
+import android.widget.TextView
+
+class NewActivity : AppCompatActivity() {
+
+    lateinit var tvNama : TextView
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_new)
+
+        tvNama = findViewById(R.id.tvNama)
+
+
+        if(intent.extras != null){
+            val bundle = intent.extras
+
+            tvNama.setText(bundle?.getString("Nama"))
+
+        }
+    }
+}
